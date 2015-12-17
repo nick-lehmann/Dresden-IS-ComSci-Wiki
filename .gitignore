@@ -2,3 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 .DS_Store
+bower_components/*
+_pages/*
+_pages
