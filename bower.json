@@ -1,0 +1,18 @@
+{
+  "name": "DP Computer Science wiki",
+  "authors": [
+    "Nick Lehmann <dresdencomputersciencewiki@gmail.com>"
+  ],
+  "description": "DP Computer Science wiki created by students of the Dresden International School",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
