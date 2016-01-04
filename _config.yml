@@ -9,7 +9,7 @@
 title: DP Computer Science Wiki - Dresden International School
 email: dresdencomputersciencewiki@gmail.com
 description: > # DP Computer Science Wiki of the Dresden International School.
-	it covers every topic of the current syllabus (graduation in 2017)
+  it covers every topic of the current syllabus (graduation in 2017)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 
