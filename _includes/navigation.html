@@ -1,16 +1,30 @@
 {% assign previous_first_level_title = "" %}
+{% assign previous_second_level_title = "" %}
 {% assign depth_level = 5 %}
-{% assign toc_uri = "/_pages/Resources/Table%20of%20contents.html" %}
-{% assign site_pages = site.pages | sort:"path" %}
+{% assign site_pages = site.pages | sort: "path" %}
 
-{% for node in site_pages %}
-  {% assign dir_parts = node.dir | replace: "%20", " " | split: "/" %}
-  {% if (dir_parts.size == depth_level) and (dir_parts[1] == "_pages") and (dir_parts[2] == "Core syllabus content") %}
-    {% assign current_first_level_title = dir_parts[3] %}
-    {% if (current_first_level_title != previous_first_level_title) %}
-      <a class="page-link" href="{{current_first_level_title|replace:' ','-'|prepend:'#'|prepend:toc_uri|prepend:site.baseurl}}">{{current_first_level_title}}</a>
-      {% assign previous_first_level_title = current_first_level_title %}
+<ul>
+  {% for node in site_pages %}
+    {% assign dir_parts = node.dir | replace: "%20", " " | split: "/" %}
+    {% if (dir_parts.size == depth_level) and (dir_parts[1] == "_pages") and (dir_parts[2] == "Core syllabus content") %}
+      {% assign current_first_level_title = dir_parts[3] %}
+      {% assign current_second_level_title = dir_parts[4] %}
+      {% if (current_first_level_title != previous_first_level_title) or (current_second_level_title != previous_second_level_title) %}
+        {% if current_first_level_title != previous_first_level_title %}
+          </ul>
+          <h4>{{current_first_level_title}}</h4>
+          <ul>
+        {% endif %}
+        {% if current_second_level_title != previous_second_level_title %}
+          </ul>
+          <h5>{{current_second_level_title}}</h5>
+          <ul>
+        {% endif %}
+        {% assign previous_first_level_title = current_first_level_title %}
+        {% assign previous_second_level_title = current_second_level_title %}
+      {% endif %}
+      {% assign directory = node.dir | split:'/' | last | replace: "%20", " " %}
+      <li><a href="{{node.url}}">{{node.title}}<!--{{ node.url | split: "/" | last | replace: "%20", " " | replace: ".html", "" }}--></a></li>
     {% endif %}
-    {% assign directory = node.dir | split:'/' | last | replace: "%20", " " %}
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+</ul>
