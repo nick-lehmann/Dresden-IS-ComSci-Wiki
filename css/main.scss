@@ -47,10 +47,11 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting",
         "metisMenu.min",
         "bootstrap.min",
-        "font-awesome.min"
+        "font-awesome.min",
+        "theDocs"
 ;
+        // "base",
+        // "layout",
+        // "syntax-highlighting",

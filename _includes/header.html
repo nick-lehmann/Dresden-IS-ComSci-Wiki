@@ -1,9 +1,58 @@
-<header class="site-header">
+<aside class="sidebar sidebar-boxed sidebar-dark">
 
-  <div class="wrapper">
+      <a class="sidebar-brand" href="#"><img src="/img/logo.svg" alt="logo"></a>
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      {% include navigation.html %}
 
-  </div>
+    </aside>
+    <!-- END Sidebar -->
 
-</header>
+
+    <header class="site-header navbar-transparent">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="index-2.html">Documentation</a></li>
+              <li><a href="page_faq.html">FAQ</a></li>
+              <li><a href="http://themeforest.net/item/thedocs-online-documentation-template/13070884/comments" target="_blank">Support</a></li>
+              <li class="hero"><a href="http://themeforest.net/item/thedocs-online-documentation-template/13070884">Purchase</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+
+      <!-- Banner -->
+      <div class="banner auto-size" style="background-color: #3A66AF; color: #E8AE32">
+        <div class="container-fluid text-white">
+          <h1>{{ page.title }}</h1>
+          {% if page.description %}
+          <h5>You can see an example of a banner in top of this page. Following code is the code for this banner.</h5>
+          {% endif %}
+        </div>
+      </div>
+      <!-- END Banner -->
+
+    </header>
