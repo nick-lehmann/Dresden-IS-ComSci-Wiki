@@ -3,23 +3,35 @@
 {% assign depth_level = 5 %}
 {% assign site_pages = site.pages | sort: "path" %}
 
-<ul>
+<ul class="metismenu">
   {% for node in site_pages %}
     {% assign dir_parts = node.dir | replace: "%20", " " | split: "/" %}
     {% if (dir_parts.size == depth_level) and (dir_parts[1] == "_pages") and (dir_parts[2] == "Core syllabus content") %}
       {% assign current_first_level_title = dir_parts[3] %}
       {% assign current_second_level_title = dir_parts[4] %}
       {% if (current_first_level_title != previous_first_level_title) or (current_second_level_title != previous_second_level_title) %}
-        {% if current_first_level_title != previous_first_level_title %}
-          </ul>
-          <h4>{{current_first_level_title}}</h4>
-          <ul>
+
+        {% if current_first_level_title != previous_first_level_title%}
+          {%if previous_first_level_title != "" %}
+              </ul>
+            </ul>
+          </li>
+          {% endif %}
+          <li><a href="#">{{current_first_level_title}}</a>
+            <ul aria-expanded="false">
+            <ul class="ignore">
+
         {% endif %}
+
         {% if current_second_level_title != previous_second_level_title %}
-          </ul>
-          <h5>{{current_second_level_title}}</h5>
-          <ul>
+            
+            </ul>
+          </li>
+
+          <li><a href="#" aria-expanded="false">{{current_second_level_title}}</a>
+            <ul aria-expanded="false">
         {% endif %}
+
         {% assign previous_first_level_title = current_first_level_title %}
         {% assign previous_second_level_title = current_second_level_title %}
       {% endif %}
