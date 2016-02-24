@@ -8,6 +8,28 @@ $(function() {
 	$('.post-header').remove();
 
 
+	// change h1 to h2 inside content
+	$('.post-content').find('>h5').each(function(element) {
+		$(this).replaceWith('<h6>' + this.innerHTML + '</h6>');
+	});
+
+	$('.post-content').find('>h4').each(function(element) {
+		$(this).replaceWith('<h5>' + this.innerHTML + '</h5>');
+	});
+
+	$('.post-content').find('>h3').each(function(element) {
+		$(this).replaceWith('<h4>' + this.innerHTML + '</h4>');
+	});
+
+	$('.post-content').find('>h2').each(function(element) {
+		$(this).replaceWith('<h3>' + this.innerHTML + '</h3>');
+	});
+
+	$('.post-content').find('>h1').each(function(element) {
+		$(this).replaceWith('<h2>' + this.innerHTML + '</h2>');
+	});
+
+
 	// Back to top
 	$('#scroll-up').on('click', function() {
 		$('html, body').animate({scrollTop : 0}, 900);
