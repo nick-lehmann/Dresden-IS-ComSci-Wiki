@@ -10,24 +10,82 @@ $(function() {
 
 	// change h1 to h2 inside content
 	$('.post-content').find('>h5').each(function(element) {
-		$(this).replaceWith('<h6>' + this.innerHTML + '</h6>');
+		$(this).replaceWith('<h6 id="' + $(this).attr('id') + '">' + this.innerHTML + '</h6>');
 	});
 
 	$('.post-content').find('>h4').each(function(element) {
-		$(this).replaceWith('<h5>' + this.innerHTML + '</h5>');
+		$(this).replaceWith('<h5 id="' + $(this).attr('id') + '">' + this.innerHTML + '</h5>');
 	});
 
 	$('.post-content').find('>h3').each(function(element) {
-		$(this).replaceWith('<h4>' + this.innerHTML + '</h4>');
+		$(this).replaceWith('<h4 id="' + $(this).attr('id') + '">' + this.innerHTML + '</h4>');
 	});
 
 	$('.post-content').find('>h2').each(function(element) {
-		$(this).replaceWith('<h3>' + this.innerHTML + '</h3>');
+		$(this).replaceWith('<h3 id="' + $(this).attr('id') + '">' + this.innerHTML + '</h3>');
 	});
 
 	$('.post-content').find('>h1').each(function(element) {
-		$(this).replaceWith('<h2>' + this.innerHTML + '</h2>');
+		$(this).replaceWith('<h2 id="' + $(this).attr('id') + '">' + this.innerHTML + '</h2>');
 	});
+
+
+	// dynamically generate table of contents on the side
+	// for in-site navigation
+	var currentNesting = 2;
+	var sidebarElement = $(".table-of-contents");
+	var sidebar = "";
+	var firstElement = false;
+	var headingList = $('.post-content').find("h2, h3, h4, h5, h6");
+
+	headingList.each(function(index, value) {
+		console.log("Current " + $(this).text());
+
+		// last element - just add it
+		if(index == headingList.length - 1) {
+			sidebar += '<li><a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a></li>';
+
+			// ending
+			for ( var i = 0; i < this.nodeName[1]-2; i++) {
+				sidebar += '</li>';
+				sidebar += '</ul>';			}
+		} else {
+
+			var currentLevel = this.nodeName[1];
+			var nextLevel = headingList[index + 1].nodeName[1];
+
+			console.log('current level' + currentLevel);
+			console.log('next level' + nextLevel);
+
+			// next heading is less important -> open list
+			if (currentLevel < nextLevel) {
+				sidebar += '<li>';
+				sidebar += '<a aria-expanded="false" href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>';
+				sidebar += '<ul>';
+			}
+
+			// next heading is more important -> close list
+			else if (currentLevel > nextLevel) {
+				sidebar += '<li><a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a></li>';
+				sidebar += '</li>';
+				sidebar += '</ul>';
+			}
+
+			// same level -> just add li
+			else {
+				sidebar += '<li><a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a></li>';
+			}
+		}
+
+
+	});
+
+	sidebarElement.append(sidebar);
+
+	$('.metismenu').metisMenu({
+		preventDefault: false,
+	});
+
 
 
 	// Back to top
@@ -37,10 +95,10 @@ $(function() {
 	});
 
 	// Smooth scroll for ToC
-	// $('.toc a, .sidenav.nav a').click(function(){
-	// 	$('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 80}, 500);
-	// 	return false;
-	// });
+	$('.table-of-contents a').click(function(){
+		$('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 80}, 500);
+		return false;
+	});
 
 	// Full height body to make sure footer will place in bottom of the page
 	if ($(window).height() > $('body').height()) {
@@ -138,27 +196,7 @@ $(function() {
 	});
 
 	// Dropdown
-	// $('.sidenav.dropable > li > a').on('click', function(e){
 
-	// 	if ( 0 < $(this).next("ul").size() ) {
-	// 		e.preventDefault();
-	// 	}
-		
-	// 	if ( 0 == $(this).next("ul").size() || 0 == $(this).next("ul:hidden").size() ) {
-	// 		return;
-	// 	}
-		
-	// 	$(this).parents(".sidenav").find("> li > a").removeClass('open');
-	// 	$(this).parents(".sidenav").find("ul").not(":hidden").slideUp(300);
-	// 	$(this).addClass('open').next("ul").slideDown(300);
-	// });
-
-	// $('.sidenav.dropable > li > a.active').addClass('open');
-	// $('.sidenav.dropable > li > ul').prev('a').addClass('has-child');
-
-	// if ($(window).width() < 768) {
-	// 	$('.sidebar-boxed').removeClass('sidebar-dark');
-	// }
 
 	// Sticky behaviour
 	if ($('.sidenav').hasClass('sticky')) {
@@ -176,6 +214,7 @@ $(function() {
 
 	// Auto link creator for headings
 	$('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function(index, value) {
+		console.log('add link');
 		var link = '<a href="#'+ $(this).attr("id") +'">'+ $(this).html() +'</a>';
 		$(this).html(link);
 	});
