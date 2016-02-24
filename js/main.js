@@ -3,6 +3,11 @@ $(function() {
 
 	"use strict";
 
+
+	// remove unwanted title in content section
+	$('.post-header').remove();
+
+
 	// Back to top
 	$('#scroll-up').on('click', function() {
 		$('html, body').animate({scrollTop : 0}, 900);
