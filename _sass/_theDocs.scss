@@ -1161,15 +1161,15 @@ h2 a {
     position: relative;
     line-height: 44px
 }
-h2 a:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    height: 1px;
-    background-color: #aaa
-}
+// h2 a:after {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     bottom: -20px;
+//     height: 1px;
+//     background-color: #aaa
+// }
 h3 {
     font-size: 30px;
     line-height: 30px;
