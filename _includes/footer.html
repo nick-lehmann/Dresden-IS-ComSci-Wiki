@@ -1,21 +1,44 @@
 <footer class="site-footer">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <p>Copyright &copy; 2015. All rights reserved</p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <ul class="footer-menu">
-                    <li><a href="page_changelog.html">Changelog</a></li>
-                    <li><a href="page_credits.html">Credits</a></li>
-                    <li><a href="mailto:support@shamsoft.net">Contact us</a></li>
-                </ul>
-          </div>
-        </div>
-    </div>
+		<div class="container-fluid">
+				<div class="row">
+						<div class="col-md-6">
+								<p>Copyright &copy; 2015. All rights reserved</p>
+						</div>
+						<div class="col-md-6 col-sm-6">
+								<ul class="footer-menu">
+										<li><a href="page_changelog.html">Changelog</a></li>
+										<li><a href="page_credits.html">Credits</a></li>
+										<li><a href="mailto:support@shamsoft.net">Contact us</a></li>
+								</ul>
+					</div>
+				</div>
+		</div>
 
 </footer>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="navigation-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Navigation</h4>
+			</div>
+			<div class="modal-body">
+				{% include navigation.html %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
