@@ -13,3 +13,12 @@ Changelog
 - includes small hotfixes (tab error)
 - adds dynamic navgiation bar, yet unstyled
 - theDocs chosen as a template, to be implemented with the next version
+
+
+## 1.0
+- work in theDocs template
+- add metisMenu as doc navigation, in modal
+- add in-doc navigation on the side
+- remove unwantend titles from post
+- change default color
+- update landing page
