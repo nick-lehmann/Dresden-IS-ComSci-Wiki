@@ -1,9 +1,69 @@
-<header class="site-header">
+<aside class="sidebar sidebar-boxed sidebar-dark">
 
-  <div class="wrapper">
+  <a class="sidebar-brand" href="/"><img src="/img/logo.svg" alt="logo"></a>
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
+  {% if page.title == "DIS Computer science wiki" %}
+  <div class="nav-intro">
+      <p>In here, the in-doc navigation will appear.</p>
+      <p>For navigating to a different topic, please use the docs navigation at the top.</p>
   </div>
+  {% else %}
+  <ul class="table-of-contents metismenu sidenav dropable sticky">
+
+  </ul>
+  {% endif %}
+
+</aside>
+<!-- END Sidebar -->
+
+
+<header class="site-header navbar-transparent">
+
+  <!-- Top navbar & branding -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <!-- Toggle buttons and brand -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+          <span class="glyphicon glyphicon-option-vertical"></span>
+        </button>
+
+        <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <!-- END Toggle buttons and brand -->
+
+      <!-- Top navbar -->
+      <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><!-- Button trigger modal -->
+            <a href="#" data-toggle="modal" data-target="#navigation-modal">
+              Docs Navigation
+            </a>
+          </li>
+          <li class="hero"><a href="mailto:itdirector@student.dresden-is.de">Contact</a></li>
+        </ul>
+      </div>
+      <!-- END Top navbar -->
+
+    </div>
+  </nav>
+  <!-- END Top navbar & branding -->
+
+  <!-- Banner -->
+  <div class="banner auto-size" style="background-color: #3A66AF; color: #E8AE32">
+    <div class="container-fluid text-white">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p>{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+  <!-- END Banner -->
 
 </header>

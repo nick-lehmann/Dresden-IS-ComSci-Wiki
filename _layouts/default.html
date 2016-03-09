@@ -7,16 +7,9 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-
-      <nav>
-        {% include navigation.html %}
-      </nav>
-
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    <main class="container-fluid">
+      {{ content }}
+    </main>
 
     {% include footer.html %}
 
