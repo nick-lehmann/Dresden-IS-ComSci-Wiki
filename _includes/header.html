@@ -1,27 +1,69 @@
-<header class="site-header">
+<aside class="sidebar sidebar-boxed sidebar-dark">
 
-  <div class="wrapper">
+  <a class="sidebar-brand" href="/"><img src="/img/logo.svg" alt="logo"></a>
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
+  {% if page.title == "DIS Computer science wiki" %}
+  <div class="nav-intro">
+      <p>In here, the in-doc navigation will appear.</p>
+      <p>For navigating to a different topic, please use the docs navigation at the top.</p>
   </div>
+  {% else %}
+  <ul class="table-of-contents metismenu sidenav dropable sticky">
+
+  </ul>
+  {% endif %}
+
+</aside>
+<!-- END Sidebar -->
+
+
+<header class="site-header navbar-transparent">
+
+  <!-- Top navbar & branding -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <!-- Toggle buttons and brand -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+          <span class="glyphicon glyphicon-option-vertical"></span>
+        </button>
+
+        <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <!-- END Toggle buttons and brand -->
+
+      <!-- Top navbar -->
+      <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><!-- Button trigger modal -->
+            <a href="#" data-toggle="modal" data-target="#navigation-modal">
+              Docs Navigation
+            </a>
+          </li>
+          <li class="hero"><a href="mailto:itdirector@student.dresden-is.de">Contact</a></li>
+        </ul>
+      </div>
+      <!-- END Top navbar -->
+
+    </div>
+  </nav>
+  <!-- END Top navbar & branding -->
+
+  <!-- Banner -->
+  <div class="banner auto-size" style="background-color: #3A66AF; color: #E8AE32">
+    <div class="container-fluid text-white">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p>{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+  <!-- END Banner -->
 
 </header>
