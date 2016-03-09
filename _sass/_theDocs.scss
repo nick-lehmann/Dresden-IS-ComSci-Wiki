@@ -406,7 +406,7 @@ body[data-spy] {
     }
 }
 .site-header .navbar {
-    background-color: #5cc7b2;
+    background-color: #3A66AF;
     padding: 20px 15px;
     margin: 0;
     border: none;
@@ -568,15 +568,15 @@ body[data-spy] {
 .navbar-default.navbar-light .active>a:hover,
 .navbar-default.navbar-light li>a:focus,
 .navbar-default.navbar-light li>a:hover {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .navbar-default.navbar-light .open>a {
-    color: #5cc7b2;
+    color: #3A66AF;
     background-color: #fcfcfc!important
 }
 .navbar-default.navbar-light .open>a:focus,
 .navbar-default.navbar-light .open>a:hover {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .navbar-default.navbar-light .dropdown-menu {
     background-color: #fcfcfc
@@ -646,7 +646,7 @@ body[data-spy] {
         right: 0!important;
         z-index: 7!important;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)!important;
-        background-color: #5cc7b2!important
+        background-color: #3A66AF!important
     }
 }
 .site-footer {
@@ -752,7 +752,7 @@ body[data-spy] {
 .sidenav a:hover {
     text-decoration: none;
     opacity: 1;
-    color: #5cc7b2
+    color: #3A66AF
 }
 .sidenav a.active {
     font-weight: 400
@@ -763,7 +763,7 @@ body[data-spy] {
 }
 .sidenav>li>a.active,
 .sidenav>li>a:hover {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .sidenav>li {
     position: relative;
@@ -802,7 +802,7 @@ body[data-spy] {
     width: 6px;
     height: 6px;
     border-radius: 100%;
-    background-color: #5cc7b2
+    background-color: #3A66AF
 }
 .sidenav>li li {
     font-size: 14px;
@@ -813,7 +813,7 @@ body[data-spy] {
     margin-right: 4px
 }
 .sidenav li.active>a {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .sidebar-line .sidenav>li>ul:before {
     display: none
@@ -832,7 +832,7 @@ body[data-spy] {
     width: 1px;
     height: 20px;
     border-radius: 0;
-    background-color: #5cc7b2
+    background-color: #3A66AF
 }
 .sidebar-line .sidenav>li.active>a:before,
 .sidebar-line .sidenav>li>a.active:before {
@@ -922,7 +922,7 @@ body[data-spy] {
 }
 .sidebar-boxed .sidenav>li>a.open,
 .sidebar-boxed .sidenav>li>a:hover {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .sidebar-boxed .sidenav>li>a.has-child:after {
     content: "\f105";
@@ -1129,7 +1129,7 @@ body {
 a,
 a:focus,
 a:hover {
-    color: #5cc7b2
+    color: #3A66AF
 }
 a:focus {
     text-decoration: none
@@ -1238,7 +1238,7 @@ h3 a:before {
     margin-right: 8px;
     font-family: Glyphicons Halflings;
     font-size: 22px;
-    color: #5cc7b2;
+    color: #3A66AF;
     opacity: .3;
     content: "\e144";
     transition: .3s ease
@@ -1863,7 +1863,7 @@ h3:hover a:before {
 .toc a:active,
 .toc a:hover {
     text-decoration: none;
-    color: #5cc7b2
+    color: #3A66AF
 }
 .toc>li:before {
     content: counter(b) ". ";
@@ -1994,10 +1994,10 @@ h3:hover a:before {
 }
 .tabs-text .nav-tabs>li.active {
     margin-bottom: -1px;
-    border-bottom: 1px solid #5cc7b2
+    border-bottom: 1px solid #3A66AF
 }
 .tabs-text .nav-tabs>li.active a {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .tabs-icon .nav-tabs>li a {
     padding: 10px 25px
@@ -2011,10 +2011,10 @@ h3:hover a:before {
 }
 .tabs-icon .nav-tabs>li.active {
     margin-bottom: -1px;
-    border-bottom: 1px solid #5cc7b2
+    border-bottom: 1px solid #3A66AF
 }
 .tabs-icon .nav-tabs>li.active a {
-    color: #5cc7b2
+    color: #3A66AF
 }
 .tabs-btn .nav-tabs {
     border-bottom: 0
@@ -2027,7 +2027,7 @@ h3:hover a:before {
     margin-right: 0
 }
 .tabs-btn .nav-tabs li.active a {
-    color: #5cc7b2
+    color: #3A66AF
 }
 @media screen and (max-width: 767px) {
     .tabs .nav-tabs>li a {
@@ -2238,7 +2238,7 @@ pre[class*=language-][data-language]:before {
 }
 .code-tabs .languages .btn.active,
 .code-tabs .languages .btn:active {
-    color: #5cc7b2;
+    color: #3A66AF;
     box-shadow: none
 }
 .code-tabs pre {
@@ -2416,7 +2416,7 @@ pre[class*=language-][data-language]:before {
     margin: 0
 }
 .grid-view li {
-    border-top: 1px solid #5cc7b2;
+    border-top: 1px solid #3A66AF;
     border-bottom: 1px solid #f5f6f7;
     border-right: 1px solid #f5f6f7;
     border-top-left-radius: 2px;
@@ -2612,7 +2612,7 @@ pre[class*=language-][data-language]:before {
 .promo>.fa,
 .promo>.glyphicon {
     font-size: 90px;
-    color: #5cc7b2
+    color: #3A66AF
 }
 .promo>h3 {
     font-weight: 500;
@@ -3003,10 +3003,10 @@ figcaption {
     bottom: 0
 }
 .carousel.indicators-out .carousel-indicators li {
-    border-color: #5cc7b2
+    border-color: #3A66AF
 }
 .carousel.indicators-out .carousel-indicators .active {
-    background-color: #5cc7b2
+    background-color: #3A66AF
 }
 @media screen and (max-width: 991px) {
     .carousel .carousel-control.right .fa {
@@ -3173,7 +3173,7 @@ figcaption {
 .pagination>li>span:focus,
 .pagination>li>span:hover {
     background-color: transparent;
-    color: #5cc7b2
+    color: #3A66AF
 }
 .pagination>.active>a,
 .pagination>.active>a:focus,
@@ -3181,7 +3181,7 @@ figcaption {
 .pagination>.active>span,
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
-    background-color: #5cc7b2;
+    background-color: #3A66AF;
     border-radius: 2px
 }
 .pager li>a {
@@ -3196,7 +3196,7 @@ figcaption {
 }
 .pager li>a:hover {
     background-color: transparent;
-    color: #5cc7b2
+    color: #3A66AF
 }
 .pager .next>a:after {
     content: "\f105";
