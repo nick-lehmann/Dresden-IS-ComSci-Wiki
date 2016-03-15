@@ -22,3 +22,6 @@ Changelog
 - remove unwantend titles from post
 - change default color
 - update landing page
+
+## 1.1
+- use redcarpet as markdown processor
