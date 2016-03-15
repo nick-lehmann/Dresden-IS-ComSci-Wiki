@@ -24,4 +24,7 @@ Changelog
 - update landing page
 
 ## 1.1
+- merge the new layout
+
+## 1.2
 - use redcarpet as markdown processor
